@@ -1,0 +1,21 @@
+
+.buttons-container {
+    text-align: center;
+}
+
+.button {
+    width: 10%;
+    height: 20%;
+    margin-right: 5%;
+    margin-left: 5%;
+}
+
+.desserts-images {
+    margin-top: 6%;
+    text-align: center;
+}
+
+.dessert-image {
+    width: 10%;
+    height: 20%;
+}

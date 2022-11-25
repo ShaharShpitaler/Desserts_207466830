@@ -1,0 +1,21 @@
+body {
+    width: 100%;
+    height: auto;
+    margin: auto;
+    background-color: #c6a2b9;
+}
+
+.logo {
+    width: 10%;
+    height: 10%;
+    margin-top: 2%;
+    margin-left: 2%;
+}
+
+h1 {
+    margin-top: 1%;
+    color: black;
+    text-align: center;
+    font-family: Brush Script MT, Brush Script Std, cursive;
+    font-size: 500%;
+}

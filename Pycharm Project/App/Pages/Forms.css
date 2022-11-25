@@ -1,0 +1,46 @@
+
+.my-form {
+    margin-top: 0.02%;
+    text-align: center;
+}
+
+.my-form label {
+    font-size: 125%;
+    color: black;
+}
+
+.my-form input {
+    margin-top: 1%;
+    background: transparent;
+    color: black;
+    border: 3px solid black;
+    width: 15%;
+    border-radius: 10px;
+}
+
+
+label {
+    font-size: 125%;
+    color: black;
+}
+
+input {
+    background: transparent;
+    color: black;
+    border: 1px solid black;
+    width: 15%;
+}
+
+.button {
+    padding-top: 2%;
+    width: 10%;
+    height: 20%;
+}
+
+
+.submit {
+    background: transparent;
+    color: black;
+    border: 1px solid black;
+    width: 5%;
+}
