@@ -2,9 +2,94 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sweet Talk</title>
+    <!--    <link rel="../../../assets/images/logo.PNG">-->
+    <link rel="stylesheet" href="../Forms.css">
+    <link rel="stylesheet" href="../Header.css">
 </head>
 <body>
+<div class="header">
+    <img class="logo" src="../../../assets/images/logo.PNG">
+    <h1>Welcome to Sweet Talk</h1>
+</div>
+
+<form action="" class="my-form">
+    <div class="form-group">
+        <label for="dessertName">Dessert name: </label>
+        <div class="spacingDivMiddle"></div>
+        <input class="form-object" id="dessertName" type="text" name="Dessert Name" placeholder="Enter dessert name..">
+        <div class="spacingDivRight"></div>
+    </div>
+    <div class="form-group">
+        <label for="description">Description:</label>
+        <div class="spacingDivMiddle"></div>
+        <textarea class="form-object" id="description" name="Description" placeholder="Enter Description.."></textarea>
+        <div class="spacingDivRight"></div>
+    </div>
+    <div class="form-group">
+        <label for="totalTime">Total time: </label>
+        <div class="spacingDivMiddle"></div>
+        <input class="form-object" id="totalTime" type="number" name="Total time" placeholder="Enter total time..">
+        <div class="spacingDivRight"></div>
+    </div>
+    <div class="form-group">
+        <label for="img">Picture </label>
+        <div class="spacingDivMiddle"></div>
+        <input class="form-object" id="img" type="image" name="Picture" placeholder="Add picture of the dessert..">
+        <div class="spacingDivRight"></div>
+    </div>
+    <div class="form-group">
+        <label for="difficultyLevel">Difficulty level: </label>
+        <div class="spacingDivMiddle"></div>
+        <select class="form-object" class="singleSelect" id="difficultyLevel">
+            <option value="Easy">Easy
+            <option value="Medium">Medium
+            <option value="Hard">Hard
+            <option value="Expert">Expert
+        </select>
+        <div class="spacingDivRight"></div>
+    </div>
+    <div class="form-group">
+        <label for="ingredients">Ingredients:</label>
+        <div class="spacingDivMiddle"></div>
+        <textarea class="form-object" id="ingredients" name="ingredients" placeholder="Enter Ingredients.."></textarea>
+        <div class="spacingDivRight"></div>
+    </div>
+    <div class="form-group">
+        <label for="howToPrepare">How to prepare:</label>
+        <div class="spacingDivMiddle"></div>
+        <textarea class="form-object" id="howToPrepare" name="How to prepare:"></textarea>
+        <div class="spacingDivRight"></div>
+    </div>
+    <div class="form-group">
+        <label for="dessertType">Dessert type: </label>
+        <div class="spacingDivMiddle"></div>
+        <select class="form-object" class="multipleSelect" name="Dessert type" id="dessertType" size="8" multiple>
+            <option value="Cake">Cake
+            <option value="Cookie">Cookie
+            <option value="Confectionery">Confectionery
+            <option value="Doughnuts">Doughnuts
+            <option value="Frozen">Frozen
+            <option value="Ice cream">Ice cream
+            <option value="Pastry">Pastry
+            <option value="Pie">Pie
+            <option value="Chocolate">Chocolate
+            <option value="Vanilla">Vanilla
+            <option value="Tart">Tart
+            <option value="Strawberry">Strawberry
+            <option value="Pudding">Pudding
+            <option value="Custer">Custer
+        </select>
+        <div class="spacingDivRight"></div>
+    </div>
+    <div class="form-group">
+        <img class="submit" src="../../../assets/images/UploadARecipe.PNG">
+    </div>
+</form>
+
 
 </body>
 </html>

@@ -1,46 +1,57 @@
 
 .my-form {
-    margin-top: 0.02%;
-    text-align: center;
+    display: flex;
+    flex-flow: wrap;
+    flex-direction: column;
+    text-align: right;
+    margin: 0 auto;
+}
+
+.form-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1%;
 }
 
 .my-form label {
-    font-size: 125%;
+    font-size: 20px;
     color: black;
+    display: inline-block;
+    width: 48%;
+    vertical-align: middle;
+    white-space: nowrap;
 }
 
-.my-form input {
-    margin-top: 1%;
+.my-form textarea {
+    height: 90px;
+}
+
+.submit {
+    padding-top: 20px;
+    width: 150px;
+}
+
+.message {
+    text-align: center;
+    color: red;
+}
+
+.form-object {
     background: transparent;
     color: black;
     border: 3px solid black;
-    width: 15%;
+    width: 30%;
     border-radius: 10px;
+    resize: none;
+    margin: 0 0 0 2%;
+    float: right;
 }
 
-
-label {
-    font-size: 125%;
-    color: black;
+.spacingDivMiddle {
+    width: 2%;
 }
 
-input {
-    background: transparent;
-    color: black;
-    border: 1px solid black;
-    width: 15%;
-}
-
-.button {
-    padding-top: 2%;
-    width: 10%;
-    height: 20%;
-}
-
-
-.submit {
-    background: transparent;
-    color: black;
-    border: 1px solid black;
-    width: 5%;
+.spacingDivRight {
+    width: 20%;
 }

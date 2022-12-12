@@ -11,20 +11,24 @@
     <link rel="stylesheet" href="../Header.css">
 </head>
 <body>
+
 <img class="logo" src="../../../assets/images/logo.PNG">
 <h1>Welcome to Sweet Talk</h1>
 
-
 <form action="" class="my-form">
     <div class="form-group">
+        <div class="message" id="usernameMessage"></div>
         <label>Username: </label>
-        <input type="text" name="username" placeholder="Enter your username..">
+        <input id="usernameInput" type="text" name="username" placeholder="Enter your username..">
     </div>
     <div class="form-group">
+        <div class="message" id="passwordMessage"></div>
         <label>Password: </label>
-        <input type="text" name="Password" placeholder="Enter your password..">
+        <input id="passwordInput" type="text" name="Password" placeholder="Enter your password..">
     </div>
-    <img class="button" src="../../../assets/images/login.PNG">
+    <div class="form-group">
+        <img class="submit" src="../../../assets/images/login.PNG">
+    </div>
 </form>
 
 

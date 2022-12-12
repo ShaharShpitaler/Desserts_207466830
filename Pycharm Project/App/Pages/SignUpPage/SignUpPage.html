@@ -9,48 +9,55 @@
     <!--    <link rel="../../../assets/images/logo.PNG">-->
     <link rel="stylesheet" href="../Forms.css">
     <link rel="stylesheet" href="../Header.css">
+    <script src="../SignUpPage/SignUpPage.js"></script>
 </head>
 <body>
 
 <img class="logo" src="../../../assets/images/logo.PNG">
 <h1>Welcome to Sweet Talk</h1>
 
-
 <form action="" class="my-form">
     <div class="form-group">
+        <div class="message" id="usernameMessage"></div>
         <label>Username: </label>
         <input type="text" name="username" placeholder="Enter your username..">
     </div>
     <div class="form-group">
+        <div class="message" id="nameMessage"></div>
         <label>Name: </label>
         <input type="text" name="name" placeholder="Enter your name..">
     </div>
     <div class="form-group">
+        <div class="message" id="EmailMessage"></div>
         <label>Email: </label>
         <input type="Email" name="Email" placeholder="Enter your Email..">
     </div>
     <div class="form-group">
+        <div class="message" id="PasswordMessage"></div>
         <label>Password: </label>
         <input type="text" name="Password" placeholder="Enter your Password..">
     </div>
     <div class="form-group">
+        <div class="message" id="genderMessage"></div>
         <label>Gender: </label>
-        <input list="Genders">
-        <datalist id="Genders">
-            <option value="Female">
-            <option value="Male">
-        </datalist>
+        <select class="singleSelect" id="genders">
+            <option value="Female">Female
+            <option value="Male">Male
+        </select>
     </div>
     <div class="form-group">
+        <div class="message" id="dateMessage"></div>
         <label>Date of birth: </label>
         <input type="date" name="Date-of-birth" placeholder="Enter your birthday..">
     </div>
     <div class="form-group">
+        <div class="message" id="favoriteDessertMessage"></div>
         <label>Favorite dessert: </label>
         <input type="text" name="Favorite-dessert" placeholder="Enter your favorite dessert..">
     </div>
-    <img class="button" src="../../../assets/images/signup.PNG">
-
+    <div class="form-group">
+        <img class="submit" src="../../../assets/images/signup.PNG" onclick="signup()">
+    </div>
 </form>
 
 </body>

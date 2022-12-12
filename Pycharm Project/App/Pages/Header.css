@@ -1,9 +1,10 @@
 body {
     width: 100%;
-    height: auto;
+    height: 100%;
     margin: auto;
     background-color: #c6a2b9;
 }
+
 
 .logo {
     width: 10%;
@@ -19,3 +20,71 @@ h1 {
     font-family: Brush Script MT, Brush Script Std, cursive;
     font-size: 500%;
 }
+
+h2 {
+    margin-top: 1%;
+    color: black;
+    text-align: center;
+    font-family: "Bell MT";
+    font-size: 200%;
+}
+
+
+nav {
+    background-color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 0 25px 0 black;
+}
+
+.navLogo {
+    margin-left: 8px;
+    width: 64px;
+    height: 64px;
+}
+
+
+nav * {
+    display: inline;
+}
+
+nav a {
+    margin: 20px;
+    color: black;
+    text-decoration: none;
+}
+
+.pageContent {
+    padding-top: 80px;
+}
+
+.buttons-container {
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+.button {
+    padding: 10px;
+    width: 200px;
+    height: 50px;
+    transition: width 0.2s ease-out;
+}
+
+.button:hover {
+    width: 220px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
