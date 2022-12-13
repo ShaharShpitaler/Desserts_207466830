@@ -11,23 +11,18 @@
     <script src="./desserts.js"></script>
     <script src="./Recipe.js"></script>
 
-
 </head>
-<body>
+<body onload="fetchAllCakeData()">
 <div class="header">
     <img class="logo" src="../../../assets/images/logo.PNG">
-    <h1 id="dessertName">this is the cake's name</h1>
-    <div id="author">this is the author's name</div>
-    <div id="description">this is the description</div>
-    <div id="totalTimeInMinutes">this is the total time in minutes</div>
+    <h1 id="dessertName"></h1>
+    <div id="author"></div>
+    <div id="description"></div>
+    <div id="totalTimeInMinutes"></div>
     <img id="img"/>
-    <div id="difficultyLevel">this is the difficulty level</div>
-    <div id="ingredients">this is the ingredients</div>
-    <div id="howToPrepare">this is how to prepare</div>
-    <button onclick="fetchAllCakeData()">fetch all data</button>
-
+    <div id="difficultyLevel"></div>
+    <div id="ingredients"></div>
+    <div id="howToPrepare"></div>
 </div>
-
-
 </body>
 </html>

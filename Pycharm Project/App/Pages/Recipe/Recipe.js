@@ -5,13 +5,13 @@ const fetchCakeField = (dessertId, data) => {
 
 const createIngredient = (name, quantity) => {
     const nameFieldDiv = document.createElement("span");
-    nameFieldDiv.innerText = 'name: ';
+    //nameFieldDiv.innerText = 'name: ';
 
     const nameValueDiv = document.createElement("span");
     nameValueDiv.innerText = name;
 
     const quantityFieldDiv = document.createElement("span");
-    quantityFieldDiv.innerText = ', quantity: ';
+    //quantityFieldDiv.innerText = ', quantity: ';
 
     const quantityValueDiv = document.createElement("span");
     quantityValueDiv.innerText = quantity;
@@ -26,20 +26,23 @@ const createIngredient = (name, quantity) => {
     return ingredientDiv;
 }
 
-const fetchAllCakeData = () => {
+const fetchAllCakeData = (dessertId) => {
+    if (!dessertId) { // TODO: delete this
+        dessertId = 0;
+    } // until here
     const fields = ['dessertName', 'author', 'description', 'totalTimeInMinutes', 'img', 'difficultyLevel', 'ingredients', 'howToPrepare'];
     const elements = fields.map((field) => document.getElementById(field));
-    const ingredients = desserts[0].ingredients; // TODO: change desserts[0] to actual dessert id
+    const ingredients = desserts[dessertId].ingredients;
 
     elements.map((el) => {
         if (el.id === 'img') {
-            return el.src = fetchCakeField(0, el.id); // TODO:change 0 to actual dessert id
+            return el.src = fetchCakeField(dessertId, el.id);
         }
         if (el.id === 'ingredients') {
             // return el.append(ingredients.map((ingredient) => createIngredient(ingredient.name, ingredient.quantity)));
             return ingredients.map((ingredient) => el.append(createIngredient(ingredient.name, ingredient.quantity)));
             // return el.appendChild(createIngredient('myName', 'myQuantity'));
         }
-        return el.innerText = fetchCakeField(0, el.id) // TODO: change 0 to actual dessert id
+        return el.innerText = fetchCakeField(dessertId, el.id);
     })
 }

@@ -13,52 +13,60 @@
 </head>
 <body>
 
-<img class="logo" src="../../../assets/images/logo.PNG">
-<h1>Welcome to Sweet Talk</h1>
-
-<form action="" class="my-form">
-    <div class="form-group">
+<div class="header">
+    <nav>
+        <img class="navLogo" src="../../../assets/images/logo.PNG">
+        <a href="../MainPage/MainPage.html">Home
+        </a>
+        <a href="../LogInPage/LogInPage.html">log in
+        </a>
+    </nav>
+</div>
+<div class="pageContent">
+    <h1>Welcome to Sweet Talk</h1>
+    <form action="" class="my-form">
         <div class="message" id="usernameMessage"></div>
-        <label>Username: </label>
-        <input type="text" name="username" placeholder="Enter your username..">
-    </div>
-    <div class="form-group">
-        <div class="message" id="nameMessage"></div>
-        <label>Name: </label>
-        <input type="text" name="name" placeholder="Enter your name..">
-    </div>
-    <div class="form-group">
+        <div class="form-group">
+            <label>Username: </label>
+            <input id="username" type="text" name="username" placeholder="Enter your username..">
+        </div>
+        <div class="message" id="firstNameMessage"></div>
+        <div class="form-group">
+            <label>First name: </label>
+            <input id="firstName" type="text" name="name" placeholder="Enter your name..">
+        </div>
+        <div class="message" id="lastNameMessage"></div>
+        <div class="form-group">
+            <label>Last name: </label>
+            <input id="lastName" type="text" name="name" placeholder="Enter your name..">
+        </div>
         <div class="message" id="EmailMessage"></div>
-        <label>Email: </label>
-        <input type="Email" name="Email" placeholder="Enter your Email..">
-    </div>
-    <div class="form-group">
-        <div class="message" id="PasswordMessage"></div>
-        <label>Password: </label>
-        <input type="text" name="Password" placeholder="Enter your Password..">
-    </div>
-    <div class="form-group">
+        <div class="form-group">
+            <label>Email: </label>
+            <input id="Email" type="Email" name="Email" placeholder="Enter your Email..">
+        </div>
+        <div class="message" id="passwordMessage"></div>
+        <div class="form-group">
+            <label>Password: </label>
+            <input id="password" type="text" name="Password" placeholder="Enter your Password..">
+        </div>
         <div class="message" id="genderMessage"></div>
-        <label>Gender: </label>
-        <select class="singleSelect" id="genders">
-            <option value="Female">Female
-            <option value="Male">Male
-        </select>
-    </div>
-    <div class="form-group">
-        <div class="message" id="dateMessage"></div>
-        <label>Date of birth: </label>
-        <input type="date" name="Date-of-birth" placeholder="Enter your birthday..">
-    </div>
-    <div class="form-group">
-        <div class="message" id="favoriteDessertMessage"></div>
-        <label>Favorite dessert: </label>
-        <input type="text" name="Favorite-dessert" placeholder="Enter your favorite dessert..">
-    </div>
-    <div class="form-group">
-        <img class="submit" src="../../../assets/images/signup.PNG" onclick="signup()">
-    </div>
-</form>
-
+        <div class="form-group">
+            <label>Gender: </label>
+            <select id="gender" class="singleSelect" id="genders">
+                <option value="Female">Female
+                <option value="Male">Male
+            </select>
+        </div>
+        <div class="message" id="dateOfBirthMessage"></div>
+        <div class="form-group">
+            <label>Date of birth: </label>
+            <input id="dateOfBirth" type="date" name="Date-of-birth" placeholder="Enter your birthday..">
+        </div>
+        <div class="form-group">
+            <img class="submit" src="../../../assets/images/signup.PNG" onclick="signup()">
+        </div>
+    </form>
+</div>
 </body>
 </html>

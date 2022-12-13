@@ -9,87 +9,136 @@
     <!--    <link rel="../../../assets/images/logo.PNG">-->
     <link rel="stylesheet" href="../Forms.css">
     <link rel="stylesheet" href="../Header.css">
+    <script src="../AddARecipePage/AddARecipePage.js"></script>
+
 </head>
 <body>
+
 <div class="header">
-    <img class="logo" src="../../../assets/images/logo.PNG">
-    <h1>Welcome to Sweet Talk</h1>
+    <nav>
+        <img class="navLogo" src="../../../assets/images/logo.PNG">
+        <a href="../ActionPage/ActionPage.html">Home
+        </a>
+        <a href="../AddARecipePage/AddARecipePage.html">Add a recipe
+        </a>
+        <a href="../AllRecipes/AllRecipes.html">Browse Recipes
+        </a>
+        <a href="../AllRecipes/AllRecipes.html">My Recipes
+        </a>
+        <a href="../MainPage/MainPage.html">Sign out
+        </a>
+    </nav>
 </div>
+<div class="pageContent">
+    <h1>Welcome to Sweet Talk</h1>
+    <form action="" class="my-form">
+        <div class="message" id="dessertNameMessage"></div>
+        <div class="form-group">
+            <label for="dessertName">Dessert name: </label>
+            <div class="spacingDivMiddle"></div>
+            <input id="dessertName" type="text" name="Dessert Name" placeholder="Enter dessert name..">
+            <div class="spacingDivRight"></div>
+        </div>
+        <div class="message" id="descriptionMessage"></div>
+        <div class="form-group">
+            <label for="description">Description:</label>
+            <div class="spacingDivMiddle"></div>
+            <textarea id="description" name="Description" placeholder="Enter Description.."></textarea>
+            <div class="spacingDivRight"></div>
+        </div>
+        <div class="form-group">
+            <label for="totalTime">Total time: </label>
+            <div class="spacingDivMiddle"></div>
+            <input id="totalTime" type="number" name="Total time" placeholder="Enter total time..">
+            <div class="spacingDivRight"></div>
+        </div>
+        <div class="form-group">
+            <label for="img">Picture </label>
+            <div class="spacingDivMiddle"></div>
+            <input id="img" type="image" name="Picture" placeholder="Add picture of the dessert..">
+            <div class="spacingDivRight"></div>
+        </div>
+        <div class="form-group">
+            <label for="difficultyLevel">Difficulty level: </label>
+            <div class="spacingDivMiddle"></div>
+            <select class="singleSelect" id="difficultyLevel">
+                <option value="Easy">Easy
+                <option value="Medium">Medium
+                <option value="Hard">Hard
+                <option value="Expert">Expert
+            </select>
+            <div class="spacingDivRight"></div>
+        </div>
 
-<form action="" class="my-form">
-    <div class="form-group">
-        <label for="dessertName">Dessert name: </label>
-        <div class="spacingDivMiddle"></div>
-        <input class="form-object" id="dessertName" type="text" name="Dessert Name" placeholder="Enter dessert name..">
-        <div class="spacingDivRight"></div>
-    </div>
-    <div class="form-group">
-        <label for="description">Description:</label>
-        <div class="spacingDivMiddle"></div>
-        <textarea class="form-object" id="description" name="Description" placeholder="Enter Description.."></textarea>
-        <div class="spacingDivRight"></div>
-    </div>
-    <div class="form-group">
-        <label for="totalTime">Total time: </label>
-        <div class="spacingDivMiddle"></div>
-        <input class="form-object" id="totalTime" type="number" name="Total time" placeholder="Enter total time..">
-        <div class="spacingDivRight"></div>
-    </div>
-    <div class="form-group">
-        <label for="img">Picture </label>
-        <div class="spacingDivMiddle"></div>
-        <input class="form-object" id="img" type="image" name="Picture" placeholder="Add picture of the dessert..">
-        <div class="spacingDivRight"></div>
-    </div>
-    <div class="form-group">
-        <label for="difficultyLevel">Difficulty level: </label>
-        <div class="spacingDivMiddle"></div>
-        <select class="form-object" class="singleSelect" id="difficultyLevel">
-            <option value="Easy">Easy
-            <option value="Medium">Medium
-            <option value="Hard">Hard
-            <option value="Expert">Expert
-        </select>
-        <div class="spacingDivRight"></div>
-    </div>
-    <div class="form-group">
-        <label for="ingredients">Ingredients:</label>
-        <div class="spacingDivMiddle"></div>
-        <textarea class="form-object" id="ingredients" name="ingredients" placeholder="Enter Ingredients.."></textarea>
-        <div class="spacingDivRight"></div>
-    </div>
-    <div class="form-group">
-        <label for="howToPrepare">How to prepare:</label>
-        <div class="spacingDivMiddle"></div>
-        <textarea class="form-object" id="howToPrepare" name="How to prepare:"></textarea>
-        <div class="spacingDivRight"></div>
-    </div>
-    <div class="form-group">
-        <label for="dessertType">Dessert type: </label>
-        <div class="spacingDivMiddle"></div>
-        <select class="form-object" class="multipleSelect" name="Dessert type" id="dessertType" size="8" multiple>
-            <option value="Cake">Cake
-            <option value="Cookie">Cookie
-            <option value="Confectionery">Confectionery
-            <option value="Doughnuts">Doughnuts
-            <option value="Frozen">Frozen
-            <option value="Ice cream">Ice cream
-            <option value="Pastry">Pastry
-            <option value="Pie">Pie
-            <option value="Chocolate">Chocolate
-            <option value="Vanilla">Vanilla
-            <option value="Tart">Tart
-            <option value="Strawberry">Strawberry
-            <option value="Pudding">Pudding
-            <option value="Custer">Custer
-        </select>
-        <div class="spacingDivRight"></div>
-    </div>
-    <div class="form-group">
-        <img class="submit" src="../../../assets/images/UploadARecipe.PNG">
-    </div>
-</form>
 
+        <div class="form-group">
+            <div class="message" id="ingredientsMessage"></div>
+            <label>Ingredients:</label>
+            <div id="ingredients">
+                <div id="ingredients-titles">
+                    <label class="ingredientLabel">Name:</label>
+                    <label class="ingredientLabel">Quantity:</label>
+                    <label class="ingredientLabel">Units:</label>
+                </div>
+                <div class="ingredient">
+                    <input type=text id="ingredientName0" placeholder="ingredient name...">
+                    <input type=text id="ingredientQuantity0" placeholder="qunatity...">
+                    <select class="singleSelect" id="ingredientUnits0">
+                        <option value="cup">cup
+                        <option value="object">object
+                        <option value="teaspoon">teaspoon
+                        <option value="drops">drops
+                        <option value="gram">gram
+                        <option value="ml">ml
+                        <option value="liters">liters
+                        <option value="kg">kg
+                        <option value="spoon">spoon
+                    </select>
+                    <div>X</div>
+                </div>
+                <div>+</div>
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <div class="message" id="howToPrepareMessage"></div>
+            <label for="howToPrepare">How to prepare:</label>
+            <div class="spacingDivMiddle"></div>
+            <textarea id="howToPrepare" name="How to prepare:"></textarea>
+            <div class="spacingDivRight"></div>
+        </div>
+        <div class="form-group">
+            <div class="message" id="dessertTypeMessage"></div>
+            <label for="dessertType">Dessert type: </label>
+            <div class="spacingDivMiddle"></div>
+            <select id="dessertType" class="multipleSelect" name="Dessert type" id="dessertType" size="8" multiple>
+                <option value="Cake">Cake
+                <option value="Cookie">Cookie
+                <option value="Confectionery">Confectionery
+                <option value="Doughnuts">Doughnuts
+                <option value="Frozen">Frozen
+                <option value="Ice cream">Ice cream
+                <option value="Pastry">Pastry
+                <option value="Pie">Pie
+                <option value="Chocolate">Chocolate
+                <option value="Vanilla">Vanilla
+                <option value="Tart">Tart
+                <option value="Strawberry">Strawberry
+                <option value="Pudding">Pudding
+                <option value="Custer">Custer
+            </select>
+            <div class="spacingDivRight"></div>
+        </div>
+        <div class="form-group">
+            <img class="submit" src="../../../assets/images/UploadARecipe.PNG" onclick="addARecipe()">
+        </div>
+    </form>
+</div>
 
 </body>
 </html>
+
+
+<!--                <img class="add" src="../../../assets/images/desserts/plus.png" onclick="addIngredient()">-->
+<!--                <img class="delete" src="../../../assets/images/desserts/Red_X.png" onclick="deleteIngredient()">-->

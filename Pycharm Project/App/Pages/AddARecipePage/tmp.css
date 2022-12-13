@@ -15,7 +15,7 @@
     margin-top: 1%;
 }
 
-label {
+.my-form label {
     font-size: 20px;
     color: black;
     display: inline-block;
@@ -23,7 +23,7 @@ label {
     white-space: nowrap;
 }
 
-textarea {
+.my-form textarea {
     height: 90px;
 }
 
@@ -37,13 +37,13 @@ textarea {
     color: red;
 }
 
-input, textarea, select {
+.my-form input, textarea {
     background: transparent;
     color: black;
     border: 3px solid black;
     border-radius: 10px;
     resize: none;
-    margin: 0 0 0 2%;
+    /*margin: 0 0 0 2%;*/
     float: right;
 }
 
@@ -66,8 +66,12 @@ input, textarea, select {
 }
 
 .ingredient {
-    display: inline-flex;
+    display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: space-between;
 }
 
+.ingredientsTableItem {
+
+}
