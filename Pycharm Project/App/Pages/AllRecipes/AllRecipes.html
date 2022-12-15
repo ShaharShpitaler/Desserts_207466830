@@ -7,36 +7,31 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Sweet Talk Action Page</title>
     <!--    <link rel="../../../assets/images/logo.PNG">-->
-    <link rel="stylesheet" href="../Header.css">
-    <link rel="stylesheet" href="../Forms.css">
-    <link rel="stylesheet" href="./AllRecipes.css">
+    <link rel="stylesheet" href="../Design.css">
     <script src="../Recipe/./desserts.js"></script>
     <script src="../Recipe/./Recipe.js"></script>
     <script src="./AllRecipes.js"></script>
+    <script src="../Utils.js"></script>
 </head>
-<body onload="fetchDataForView({})">
+<body onload="
+    activeNavBar();
+    fetchDataForView({});
+">
 
-<div class="header">
-    <nav>
-        <img class="navLogo" src="../../../assets/images/logo.PNG">
-        <a href="../ActionPage/ActionPage.html">Home
-        </a>
-        <a href="../AddARecipePage/AddARecipePage.html">Add a recipe
-        </a>
-        <a href="../AllRecipes/AllRecipes.html">Browse Recipes
-        </a>
-        <a href="../AllRecipes/AllRecipes.html">My Recipes
-        </a>
-        <a href="../MainPage/MainPage.html">Sign out
-        </a>
-    </nav>
-</div>
+<nav>
+    <img class="navLogo" src="../../../assets/images/logo.PNG">
+    <a href="../ActionPage/ActionPage.html">Home</a>
+    <a href="../AddARecipePage/AddARecipePage.html">Add a recipe</a>
+    <a href="../AllRecipes/AllRecipes.html">Browse Recipes</a>
+    <a href="../MainPage/MainPage.html">Sign out</a>
+</nav>
+
 
 <div class="pageContent">
     <h1>Recipes</h1>
     <label>Filter by:</label>
     <div class="filters">
-        <div class="filterGroup">
+        <div class="filter-group">
             <label>Difficulty level:</label>
             <select class="singleSelect" id="difficultyLevelFilter">
                 <option value="Easy">Easy
@@ -45,11 +40,11 @@
                 <option value="Expert">Expert
             </select>
         </div>
-        <div class="filterGroup">
+        <div class="filter-group">
             <label>Max total time:</label>
             <input id="totalTimeFilter" type="number" placeholder="Enter total time..">
         </div>
-        <div class="filterGroup">
+        <div class="filter-group">
             <label>Type of dessert:</label>
             <select id="typeOfDessertFilter">
                 <option value="Cake">Cake
@@ -68,18 +63,19 @@
                 <option value="Custer">Custer
             </select>
         </div>
-        <div class="filterGroup">
+        <div class="filter-group">
+            <label>Mine/Others</label>
+            <select id="myOrOthers">
+                <option value="Others">Others
+                <option value="Mine">Mine
+            </select>
+        </div>
+        <div class="filter-group">
             <button onclick="fetchDataForView({})">Filter</button>
         </div>
     </div>
 
     <div id="recipes"></div>
-    <!--    <div class="recipe">-->
-    <!--        <div id="dessertName">this is the cake's name</div>-->
-    <!--        <div id="author">this is the author's name</div>-->
-    <!--        <div id="description">this is the description</div>-->
-    <!--        <div id="totalTime">this is the total time</div>-->
-    <!--    </div>-->
 </div>
 
 </body>

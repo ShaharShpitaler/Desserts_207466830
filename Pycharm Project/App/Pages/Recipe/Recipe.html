@@ -7,22 +7,47 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Sweet Talk Action Page</title>
     <!--    <link rel="../../../assets/images/logo.PNG">-->
-    <link rel="stylesheet" href="../Header.css">
+    <link rel="stylesheet" href="../Design.css">
     <script src="./desserts.js"></script>
     <script src="./Recipe.js"></script>
+    <script src="../Utils.js"></script>
 
 </head>
-<body onload="fetchAllCakeData()">
+<body onload="
+    activeNavBar();
+    fetchAllCakeData();
+">
 <div class="header">
     <img class="logo" src="../../../assets/images/logo.PNG">
     <h1 id="dessertName"></h1>
-    <div id="author"></div>
-    <div id="description"></div>
-    <div id="totalTimeInMinutes"></div>
-    <img id="img"/>
-    <div id="difficultyLevel"></div>
-    <div id="ingredients"></div>
-    <div id="howToPrepare"></div>
+    <div class="recipe-item">
+        <span class="recipe-title">By: </span>
+        <span id="author"></span>
+    </div>
+    <div class="recipe-item">
+        <span class="recipe-title">Description: </span>
+        <span id="description"></span>
+    </div>
+    <div class="recipe-item">
+        <span class="recipe-title">Total time: </span>
+        <span id="totalTimeInMinutes"></span>
+        <span> Minutes</span>
+    </div>
+    <div class="recipe-item">
+        <span class="recipe-title">Difficulty level: </span>
+        <span id="difficultyLevel"></span>
+    </div>
+    <div class="recipe-item">
+        <span class="recipe-title">Ingredients: </span>
+        <span id="ingredients"></span>
+    </div>
+    <div class="recipe-item">
+        <span class="recipe-title">How to prepare: </span>
+        <span id="howToPrepare"></span>
+    </div>
+    <div class="recipe-item">
+        <img class="recipe-item" id="img">
+    </div>
 </div>
 </body>
 </html>

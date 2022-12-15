@@ -33,9 +33,11 @@ const createDessertFieldDiv = (fieldName, fieldValue) => {
 
     const fieldLabelSpan = document.createElement("span");
     fieldLabelSpan.innerText = `${fieldName}: `;
+    fieldLabelSpan.className = 'recipe-title';
 
     const fieldValueSpan = document.createElement("span");
     if (fieldName === 'Image') {
+        fieldLabelSpan.innerText = '';
         const fieldValueImage = document.createElement('img');
         fieldValueImage.src = fieldValue;
         fieldValueSpan.appendChild(fieldValueImage);
@@ -64,6 +66,13 @@ const createDessertDiv = (dessertName, author, description, totalTimeInMinutes, 
     dessertDiv.appendChild(totalTimeFieldDiv);
     dessertDiv.appendChild(imgDiv);
 
-    dessertDiv.className = 'recipeInList';
+
+    if (author === 'Dana Bandana') { // for now - only create button for first dessert (until we have backend)
+        const goToDessertButton = document.createElement('div');
+        goToDessertButton.innerHTML = '<a href="../../Pages/Recipe/Recipe.html">Go to dessert page</a>'
+        dessertDiv.appendChild(goToDessertButton);
+    }
+
+    dessertDiv.className = 'recipe-item recipe-in-list';
     return dessertDiv;
 }

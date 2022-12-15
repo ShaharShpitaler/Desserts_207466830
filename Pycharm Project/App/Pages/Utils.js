@@ -1,7 +1,30 @@
+/* ---------------Active nav --------------*/
+
+const activeNavBar = () => {
+    const activePage = window.location.pathname;
+    const navLinks = document.querySelectorAll('nav a').forEach(link => {
+        if (link.href.includes(`${activePage}`)) {
+            link.classList.add('active');
+        }
+    });
+}
+
+/* ---------------Allow user to add image --------------*/
+
+const image_input = document.querySelector("#img");
+image_input?.addEventListener("change", function () {
+    const reader = new FileReader();
+    reader.addEventListener("load", () => {
+        const uploaded_image = reader.result; //Will save the image later in backend
+    });
+});
+
+/* ---------------Validations --------------*/
+
 const validateUsername = (username) => {
     const letters = /^[0-9a-zA-Z\_\.]+$/;
     if (!username.match(letters)) {
-        return "Please enter a validate name"
+        return "Please enter a valid name"
     }
     return ""
 }
@@ -18,7 +41,7 @@ const validatePassword = (password) => {
 const validateEmail = (Email) => {
     const Emai = new RegExp(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)
     if (!Email.match(Emai)) {
-        return "Please insert a validate Email"
+        return "Please insert a valid Email"
     }
     return ""
 }
@@ -41,7 +64,7 @@ const validateDateOfBirth = (dateOfBirth) => {
 }
 
 
-const validateInput = (fieldName, userInput) => {
+const validateInputForSignUp = (fieldName, userInput) => {
     let result;
     switch (fieldName) {
         case "username": {
@@ -72,11 +95,16 @@ const validateInput = (fieldName, userInput) => {
     return result;
 }
 
-const returnErrorMessage = (fieldName) => {
+const returnErrorMessage = (fieldName, form) => {
     const userInput = document.getElementById(fieldName).value;
     const fieldNameMessage = fieldName + "Message";
     const messageDiv = document.getElementById(fieldNameMessage);
-    const errorMessage = validateInput(fieldName, userInput);
+    let errorMessage;
+    if (form === 'signup') {
+        errorMessage = validateInputForSignUp(fieldName, userInput);
+    } else {
+        errorMessage = validateInputForRecipe(fieldName, userInput);
+    }
     messageDiv.innerText = errorMessage;
     return errorMessage;
 }
@@ -85,7 +113,7 @@ const signup = () => {
     let flag = true
     const fieldNames = ['username', 'firstName', 'lastName', 'Email', 'password', 'dateOfBirth']
     fieldNames.forEach(fieldName => {
-        const errorMessage = returnErrorMessage(fieldName);
+        const errorMessage = returnErrorMessage(fieldName, 'signup');
         if (errorMessage !== '') {
             flag = false;
         }
@@ -94,3 +122,48 @@ const signup = () => {
         window.location = "../ActionPage/ActionPage.html";
     }
 }
+
+const validateDessertName = (dessertName) => {
+    const letters = /^[0-9a-zA-Z\s]+$/;
+    if ((!dessertName.match(letters)) || (dessertName.trim().length === 0)) {
+        return "Please enter a valid name"
+    }
+    return ""
+}
+
+const validateDescription = (description) => {
+    if (description.length > 500) {
+        return "description must be under 500 letters"
+    }
+    return "";
+}
+
+
+const validateInputForRecipe = (fieldName, userInput) => {
+    switch (fieldName) {
+        case "dessertName": {
+            const result = validateDessertName(userInput);
+            if (result != "") {
+                flag = false;
+            }
+            return result;
+        }
+        case "description": {
+            const result = validateDescription(userInput);
+            if (result != "") {
+                flag = false;
+            }
+            return result;
+        }
+    }
+}
+
+
+const addARecipe = () => {
+    fieldNames = ['dessertName', 'description'] //TODO : Add ingredients and dessert type
+    fieldNames.forEach(fieldName => returnErrorMessage(fieldName, 'add-a-recipe'))
+    if (flag === true) {
+        window.location = "../SignUpPage/SignUpPage.html"
+    }
+}
+
