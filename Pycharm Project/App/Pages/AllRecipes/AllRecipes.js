@@ -71,7 +71,12 @@ const createDessertDiv = (dessertName, author, description, totalTimeInMinutes, 
         const goToDessertButton = document.createElement('div');
         goToDessertButton.innerHTML = '<a href="../../Pages/Recipe/Recipe.html">Go to dessert page</a>'
         dessertDiv.appendChild(goToDessertButton);
+        
+        const deleteButton = document.createElement('button');
+        deleteButton.innerText = 'X';
+        dessertDiv.appendChild(deleteButton);
     }
+
 
     dessertDiv.className = 'recipe-item recipe-in-list';
     return dessertDiv;

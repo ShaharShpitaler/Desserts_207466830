@@ -9,7 +9,7 @@ const activeNavBar = () => {
     });
 }
 
-/* ---------------Allow user to add image --------------*/
+/* ---------------Allow user to add image and save it --------------*/
 
 const image_input = document.querySelector("#img");
 image_input?.addEventListener("change", function () {
@@ -64,6 +64,36 @@ const validateDateOfBirth = (dateOfBirth) => {
 }
 
 
+const validateDessertName = (dessertName) => {
+    const letters = /^[0-9a-zA-Z\s]+$/;
+    if ((!dessertName.match(letters)) || (dessertName.trim().length === 0)) {
+        return "Please enter a valid name"
+    }
+    return ""
+}
+
+const validateDescription = (description) => {
+    if (description.length > 500) {
+        return "description must be under 500 letters"
+    }
+    return "";
+}
+
+const validateInputForRecipe = (fieldName, userInput) => {
+    let result = '';
+    switch (fieldName) {
+        case "dessertName": {
+            result = validateDessertName(userInput);
+            break;
+        }
+        case "description": {
+            result = validateDescription(userInput);
+            break;
+        }
+    }
+    return result;
+}
+
 const validateInputForSignUp = (fieldName, userInput) => {
     let result;
     switch (fieldName) {
@@ -95,6 +125,26 @@ const validateInputForSignUp = (fieldName, userInput) => {
     return result;
 }
 
+
+const validateLogin = (fieldName, userInput) => {
+    let result = '';
+    switch (fieldName) {
+        case "username": {
+            if (userInput === '') {
+                result = "please enter username"
+            }
+            break;
+        }
+        case "password": {
+            if (userInput === '') {
+                result = "please enter password"
+            }
+            break;
+        }
+    }
+    return result;
+}
+
 const returnErrorMessage = (fieldName, form) => {
     const userInput = document.getElementById(fieldName).value;
     const fieldNameMessage = fieldName + "Message";
@@ -102,12 +152,30 @@ const returnErrorMessage = (fieldName, form) => {
     let errorMessage;
     if (form === 'signup') {
         errorMessage = validateInputForSignUp(fieldName, userInput);
+    } else if (form === 'login') {
+        errorMessage = validateLogin(fieldName, userInput);
     } else {
         errorMessage = validateInputForRecipe(fieldName, userInput);
     }
     messageDiv.innerText = errorMessage;
     return errorMessage;
 }
+
+
+const login = () => {
+    let flag = true
+    const fieldNames = ['username', 'password']
+    fieldNames.forEach(fieldName => {
+        const errorMessage = returnErrorMessage(fieldName, 'login');
+        if (errorMessage !== '') {
+            flag = false;
+        }
+    })
+    if (flag === true) {
+        window.location = "../ActionPage/ActionPage.html";
+    }
+}
+
 
 const signup = () => {
     let flag = true
@@ -123,47 +191,17 @@ const signup = () => {
     }
 }
 
-const validateDessertName = (dessertName) => {
-    const letters = /^[0-9a-zA-Z\s]+$/;
-    if ((!dessertName.match(letters)) || (dessertName.trim().length === 0)) {
-        return "Please enter a valid name"
-    }
-    return ""
-}
-
-const validateDescription = (description) => {
-    if (description.length > 500) {
-        return "description must be under 500 letters"
-    }
-    return "";
-}
-
-
-const validateInputForRecipe = (fieldName, userInput) => {
-    switch (fieldName) {
-        case "dessertName": {
-            const result = validateDessertName(userInput);
-            if (result != "") {
-                flag = false;
-            }
-            return result;
-        }
-        case "description": {
-            const result = validateDescription(userInput);
-            if (result != "") {
-                flag = false;
-            }
-            return result;
-        }
-    }
-}
-
-
 const addARecipe = () => {
-    fieldNames = ['dessertName', 'description'] //TODO : Add ingredients and dessert type
-    fieldNames.forEach(fieldName => returnErrorMessage(fieldName, 'add-a-recipe'))
+    let flag = true;
+    const fieldNames = ['dessertName', 'description'];
+    fieldNames.forEach(fieldName => {
+        const errorMessage = returnErrorMessage(fieldName, 'add-a-recipe');
+        if (errorMessage !== '') {
+            flag = false;
+        }
+    });
     if (flag === true) {
-        window.location = "../SignUpPage/SignUpPage.html"
+        alert('Recipe added successfully! (not really, will be implemented in part 3...)');
     }
 }
 

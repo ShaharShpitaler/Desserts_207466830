@@ -17,37 +17,47 @@
     activeNavBar();
     fetchAllCakeData();
 ">
-<div class="header">
-    <img class="logo" src="../../../assets/images/logo.PNG">
-    <h1 id="dessertName"></h1>
-    <div class="recipe-item">
-        <span class="recipe-title">By: </span>
-        <span id="author"></span>
+<div>
+    <nav>
+        <img class="navLogo" src="../../../assets/images/logo.PNG">
+        <a href="../ActionPage/ActionPage.html">Home</a>
+        <a href="../AddARecipePage/AddARecipePage.html">Add a recipe</a>
+        <a href="../AllRecipes/AllRecipes.html">Browse Recipes</a>
+        <a href="../Recipe/Recipe.html">Recipe</a>
+        <a href="../MainPage/MainPage.html">Sign out</a>
+    </nav>
+    <div class="pageContent">
+        <h1 id="dessertName"></h1>
+        <div class="recipe-item">
+            <span class="recipe-title">By: </span>
+            <span id="author"></span>
+        </div>
+        <div class="recipe-item">
+            <span class="recipe-title">Description: </span>
+            <span id="description"></span>
+        </div>
+        <div class="recipe-item">
+            <span class="recipe-title">Total time: </span>
+            <span id="totalTimeInMinutes"></span>
+            <span> Minutes</span>
+        </div>
+        <div class="recipe-item">
+            <span class="recipe-title">Difficulty level: </span>
+            <span id="difficultyLevel"></span>
+        </div>
+        <div class="recipe-item">
+            <span class="recipe-title">Ingredients: </span>
+            <span id="ingredients"></span>
+        </div>
+        <div class="recipe-item">
+            <span class="recipe-title">How to prepare: </span>
+            <span id="howToPrepare"></span>
+        </div>
+        <div class="recipe-item">
+            <img class="recipe-item" id="img">
+        </div>
     </div>
-    <div class="recipe-item">
-        <span class="recipe-title">Description: </span>
-        <span id="description"></span>
-    </div>
-    <div class="recipe-item">
-        <span class="recipe-title">Total time: </span>
-        <span id="totalTimeInMinutes"></span>
-        <span> Minutes</span>
-    </div>
-    <div class="recipe-item">
-        <span class="recipe-title">Difficulty level: </span>
-        <span id="difficultyLevel"></span>
-    </div>
-    <div class="recipe-item">
-        <span class="recipe-title">Ingredients: </span>
-        <span id="ingredients"></span>
-    </div>
-    <div class="recipe-item">
-        <span class="recipe-title">How to prepare: </span>
-        <span id="howToPrepare"></span>
-    </div>
-    <div class="recipe-item">
-        <img class="recipe-item" id="img">
-    </div>
+
 </div>
 </body>
 </html>
