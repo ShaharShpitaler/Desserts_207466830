@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b27b5bc3-7daf-4c8c-b343-5c832879915e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Part A - WEB.docx" beforeDir="false" afterPath="$PROJECT_DIR$/Part A - WEB.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pycharm Project/App/Pages/Design2.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pycharm Project/server/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,19 +14,32 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="2HRlNDABZdZIv5KuYIjHVnTUj9V" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "javascript.nodejs.core.library.configured.version": "18.13.0",
+    "javascript.nodejs.core.library.typings.version": "18.11.18",
+    "last_opened_file_path": "C:/Users/Shahar/Documents/GitHub/Desserts_207466830/Pycharm Project/App/Pages",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "settings.nodejs"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Shahar\Documents\GitHub\Desserts_207466830\Pycharm Project\App\Pages" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -35,6 +50,10 @@
       <updated>1668255735647</updated>
       <workItem from="1668255882877" duration="112000" />
       <workItem from="1668255998678" duration="23000" />
+      <workItem from="1673099810461" duration="1007000" />
+      <workItem from="1673102485800" duration="2281000" />
+      <workItem from="1673206678445" duration="439000" />
+      <workItem from="1675251418422" duration="2243000" />
     </task>
     <servers />
   </component>

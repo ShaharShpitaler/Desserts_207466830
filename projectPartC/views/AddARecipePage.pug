@@ -1,0 +1,67 @@
+extends mainLayout
+block content
+
+    form(class="my-form", action="/addNewRecipe", method="post", enctype="multipart/form-data")
+        div(class="message") #{dessertNameMsg || ''}
+        div(class="form-group")
+            label(for="dessertName") Dessert name:
+            if locals.recipeData 
+                input(type="text", name="dessertName", id="dessertName", value=recipeData.dessert_name, required="required")
+            else
+                input(type="text", name="dessertName", id="dessertName", required="required")
+        div(class="message") #{descriptionMsg || ''}
+        div(class="form-group")
+            label(for="description") Description:
+            if locals.recipeData 
+                textarea(name="description", id="description") #{recipeData.dessert_description}
+            else
+                textarea(name="description", id="description", placeholder="Enter Description..")
+        div(class="message") #{totalTimeMsg || ''}
+        div(class="form-group")
+            label(for="totalTime") Total time:
+            if locals.recipeData
+                input(id="totalTime", type="number", name="totalTime", value=recipeData.total_time, required="required")
+            else
+                input(id="totalTime", type="number", name="totalTime", placeholder="Enter Total Time..", required="required")
+        div(class="message") #{imgMsg || ''}
+        div(class="form-group")
+            label(for="image") Picture:
+            input(type="file", id="image_file", name="image_file", placeholder="Add picture of the dessert..")
+        div(class="message") #{difficultyLevelMsg || ''}
+        div(class="form-group")
+            label(for="difficultyLevel") Difficulty level:
+            select(class="singleSelect", id="difficultyLevel", name="difficultyLevel" required="required")
+                option(value="Easy") Easy
+                option(value="Medium") Medium
+                option(value="Hard") Hard
+                option(value="Expert") Expert
+        div(class="message") #{ingredientsMsg || ''}
+        div(class="form-group")
+            label(for="ingredients") ingredients:
+            if locals.recipeData
+                textarea(name="ingredients", id="ingredients", required="required") #{recipeData.ingrediants}
+            else 
+                textarea(id="ingredients", name="ingredients", placeholder="Enter ingredients..", required="required")
+        div(class="message") #{howToPrepareMsg || ''}
+        div(class="form-group")
+            label(for="howToPrepare") How to prepare:
+            if locals.recipeData
+                textarea(name="howToPrepare", id="howToPrepare", required="required") #{recipeData.how_to_prepare}
+            else 
+                textarea(id="howToPrepare", name="howToPrepare", placeholder="Enter how to prepare..", required="required")
+        div(class="form-group")
+            label(for="dessertType") Dessert Type:
+            select(id="dessertType", name="dessertType", size="8", required="required")
+                option(value="Cake") Cake
+                option(value="Cookie") Cookie
+                option(value="Confectionery") Confectionery
+                option(value="Doughnuts") Doughnuts
+                option(value="Frozen") Frozen
+                option(value="Ice cream") Ice cream
+                option(value="Pastry") Pastry
+                option(value="Pie") Pie
+                option(value="Pudding") Pudding
+                option(value="Custer") Custer
+        div(class="form-group")
+            input(type="submit", value="Add your recipe!")
+

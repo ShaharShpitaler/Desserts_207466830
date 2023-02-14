@@ -1,0 +1,51 @@
+extends mainLayout
+block content
+    form(action="/createNewUser", class="my-form", method="post")
+        div(class="form-group")
+            div(class="message") #{usernameMsg || ''}
+            label(for="username") Username:
+            if locals.userInputs
+                input(type="text", name="username", id="username", value=userInputs.user_name, required="required")
+            else
+                input(type="text", name="username", id="username", placeholder="Enter your username..", required="required")
+        div(class="form-group")
+            div(class="message") #{firstNameMsg || ''}
+            label(for="firstName") First name:
+            if locals.userInputs
+                input(type="text", id="firstName", name="firstName", value=userInputs.first_name, required="required")
+            else 
+                input(type="text", id="firstName", name="firstName", placeholder="Enter your first name..", required="required")
+        div(class="form-group")
+            div(class="message") #{lastNameMsg || ''}
+            label(for="lastName") Last name:
+            if locals.userInputs
+                input(type="text", id="lastName", name="lastName", value=userInputs.last_name, required="required")
+            else
+                input(type="text", id="lastName", name="lastName", placeholder="Enter your last name..", required="required")
+        div(class="form-group")
+            div(class="message") #{emailMsg || ''}
+            label(for="email") Email:
+            if locals.userInputs
+                input(type="Email", id="email", name="email", value=userInputs.email, required="required")
+            else
+                input(type="Email", id="email", name="email", placeholder="Enter your E-mail..", required="required")
+        div(class="form-group") 
+            div(class="message") #{passwordMsg || ''}
+            label(for="password") Password:
+            input(type="password", id="password", name="password", placeholder="Enter your password..", required="required")
+        div(class="form-group")
+                label(for="gender") Gender:
+                select(class="gender" id="gender" name="gender")
+                    option(value="Male") Male
+                    option(value="Female") Female
+                    option(value="Other") Other
+        div(class="form-group")
+            div(class="message") #{birthdayMsg || ''}
+            label(for="dateOfBirth") Date of birth:
+            if locals.userInputs
+                input(type="date", id="dateOfBirth", name="dateOfBirth", value=userInputs.password, required="required")
+            else 
+                input(type="date", id="dateOfBirth", name="dateOfBirth", placeholder="Enter your birthday..", required="required")
+        div(class="form-group")
+            button(type="submit") 
+                img(class="button", src="images/signup.PNG")

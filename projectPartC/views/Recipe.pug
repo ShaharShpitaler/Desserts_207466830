@@ -1,0 +1,106 @@
+extends mainLayout
+block content
+
+    if recipe[0].rating != null
+        div(class="recipe-item")
+            span(class="recipe-title") Average rating: 
+            span #{avg_rating}
+    div(class="recipe-item")
+        span(class="recipe-title") By: 
+        span #{recipe[0].first_name} #{recipe[0].last_name}
+    div(class="recipe-item")
+        span(class="recipe-title") Description: 
+        span #{recipe[0].dessert_description}
+    div(class="recipe-item")
+        span(class="recipe-title") Total time: 
+        span #{recipe[0].total_time}
+        span  Minutes
+    div(class="recipe-item")
+        span(class="recipe-title") Difficulty level:  
+        span #{recipe[0].difficulty_level}
+    div(class="recipe-item")
+        span(class="recipe-title") Ingredients:
+        span #{recipe[0].ingrediants}
+    div(class="recipe-item")
+        span(class="recipe-title") How to prepare:    
+        span #{recipe[0].how_to_prepare}
+    if recipe[0].img_path != null
+        div(class="recipe-item")
+            img(class="button" src="/images/desserts/"+recipe[0].img_path)
+    if recipe[0].rating == null
+        div(class="recipe-item")
+            span(class="recipe-title") Ratings and comments
+        div(class="recipe-item")
+            span(class="recipe-title") No ratings yet 
+    else
+        div(class="recipe-item")
+            span(class="recipe-title") Ratings and comments
+        table(class="recipe-item")
+            thead
+                tr
+                th Rating
+                th Comment
+            tbody
+            each r in recipe
+                tr
+                    td #{r.rating}
+                    td #{r.comment}
+    if recipe[0].is_author == 1
+        div(class="recipe-item")
+            button(onclick='delete_recipe_msg(' + recipe[0].dessert_id + ')') X
+
+    if recipe[0].is_author == 0 && !already_rated
+        //- div(class="recipe-item")
+        //-     a(href="/RatingPage/"+recipe.dessert_id) Rate me
+        div(class="recipe-item")
+            span(class="recipe-title") Add your rating!
+
+        form(action="/createNewRating/"+recipe[0].dessert_id, class="my-form", method="post")
+            div(class="form-group")
+                label(for="rating") Your rating:
+                select(class="rating" id="rating" name="rating")
+                    option(value="1") 1
+                    option(value="2") 2
+                    option(value="3") 3
+                    option(value="4") 4
+                    option(value="5") 5
+            div(class="form-group")
+                label(for="comment") Your comment:
+                textarea(name="comment", id="comment", placeholder="Enter your comment here..", required="required")
+            div(class="form-group")
+                input(type="submit", value="Rate me!")
+
+    //- div(class="recipe-item") 
+    //-     img(class="rating-image" name="rating" src="images/stars.png")
+    //- div(class="recipe-item") 
+    //-     label(for="author") By:
+    //-     span(id="author" name="author")
+    //- div(class="recipe-item") 
+    //-     label(for="Description") Description:
+    //-     span(id="Description" name="Description")
+    //- div(class="recipe-item") 
+    //-     label(for="totalTime") Max total time:
+    //-     span(id="totalTime" name="totalTime")
+    //-     span Minutes 
+    //- div(class="recipe-item") 
+    //-     label(for="difficultyLevel") Difficulty level:
+    //-     span(id="difficultyLevel" name="difficultyLevel")
+    //- div(class="recipe-item") 
+    //-     label(for="Ingredients") Ingredients:
+    //-     span(id="Ingredients" name="Ingredients")
+    //- div(class="recipe-item") 
+    //-     label(for="howToPrepare") How to prepare:
+    //-     span(id="howToPrepare" name="howToPrepare")
+    //- img(class="recipe-item" id="img")
+    //- div(class="recipe-item") 
+    //-     button(for="Rating") Rate me!
+    //- label(for="Comments") Comments:
+    //- span(id="Comments" name="Comments")
+
+
+
+
+    
+
+
+                

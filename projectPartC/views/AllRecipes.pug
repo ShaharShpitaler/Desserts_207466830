@@ -1,0 +1,69 @@
+extends mainLayout
+block content
+
+    form(action="/filterRecipes", method="get")
+        div(class="filters")
+            div(class = "form-group")
+                label() Filter by:
+            div(class = "form-group")
+                label(for="difficultyLevelFilter") Difficulty level:
+                select(name="difficultyLevelFilter", id="difficultyLevelFilter")
+                    option(value="")
+                    option(value="Easy") Easy
+                    option(value="Medium") Medium
+                    option(value="Hard") Hard
+                    option(value="Expert") Expert
+            div(class = "form-group")
+                label(for="totalTimeFilter") Max total time:
+                input(type="number", name="totalTimeFilter", id="totalTimeFilter", placeholder="Enter Maximum time..")
+            div(class = "form-group")
+                label(for="typeOfDessertFilter") Type of dessert:
+                select(name="typeOfDessertFilter", id="typeOfDessertFilter")
+                    option(value="")
+                    option(value="Cake") Cake
+                    option(value="Cookie") Cookie
+                    option(value="Confectionery") Confectionery
+                    option(value="Doughnuts") Doughnuts
+                    option(value="Frozen") Frozen
+                    option(value="Ice cream") Ice cream
+                    option(value="Pastry") Pastry
+                    option(value="Pie") Pie
+                    option(value="Tart") Tart
+                    option(value="Pudding") Pudding
+                    option(value="Custer") Custer
+            div(class = "form-group")
+                label(for="myOrOthers") Mine/Others/All
+                select(name="myOrOthers", id="myOrOthers")
+                    option(value="All") All
+                    option(value="Others") Others
+                    option(value="Mine") Mine
+            div(class = "form-group")
+                input(type="submit", value="Filter")
+
+    if recipes != ""
+        div(id="recipes")
+        each r in recipes
+            div(class="recipe-item recipe-in-list")
+                div 
+                    span(class="recipe-title") Dessert name: 
+                    span #{r.dessert_name}
+                div
+                    span(class="recipe-title") Author: 
+                    span #{r.first_name} #{r.last_name}
+                div
+                    span(class="recipe-title") Description:  
+                    span #{r.dessert_description}
+                div
+                    span(class="recipe-title") Total time in minutes:   
+                    span #{r.total_time}
+                if r.img_path != null
+                    div
+                        span(class="recipe-title")
+                        span
+                            img(class="button" src="images/desserts/"+r.img_path)
+                div
+                    a(href="/dessertPage/"+r.dessert_id) Go to dessert page
+                if r.is_author == 1
+                    button(onclick='delete_recipe_msg(' + r.dessert_id + ')') X
+    else 
+        div(id="recipes") No suitable recipes were found             

@@ -1,0 +1,17 @@
+extends mainLayout
+block content
+    if alertMsg
+        p #{alertMsg}
+    form(action="/checkUser", class="my-form", method="post")
+        div(class="form-group")
+            div(class="message") #{usernameMsg || ''}
+            label(for="username") Username:
+            input(type="text", name="username", id="username", placeholder="Enter your username..", value=user_name || '', required="required")
+        div(class="form-group")
+            div(class="message") #{passwordMsg || ''}
+            label(for="password") Password:
+            input(type="password", id="password", name="password", placeholder="Enter your password..")
+        div(class="form-group")
+            button(type="submit")
+                img(class="button", src="images/login.PNG")
+

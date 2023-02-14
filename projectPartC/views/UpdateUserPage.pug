@@ -1,0 +1,27 @@
+extends mainLayout
+block content
+    form(action="/updateUser", class="my-form", method="post")
+        div(class="form-group")
+            div(class="message") #{firstNameMsg || ''}
+            label(for="firstName") First name:
+            if locals.userInputs
+                input(type="text", id="firstName", name="firstName", value=userInputs.first_name, required="required")
+            else 
+                input(type="text", id="firstName", name="firstName", value=userData.first_name, required="required")
+        div(class="form-group")
+            div(class="message") #{lastNameMsg || ''}
+            label(for="lastName") Last name:
+            if locals.userInputs
+                input(type="text", id="lastName", name="lastName", value=userInputs.last_name, required="required")
+            else
+                input(type="text", id="lastName", name="lastName", value=userData.last_name, required="required")
+        div(class="form-group") 
+            div(class="message") #{passwordMsg || ''}
+            label(for="password") Password:
+            if locals.userInputs
+                input(type="text", id="lastName", name="lastName", value=userInputs.password, required="required")
+            else
+                input(type="password", id="password", name="password", value=userData.password, required="required")
+        div(class="form-group")
+            button(type="submit") 
+                img(class="button", src="images/signup.PNG")

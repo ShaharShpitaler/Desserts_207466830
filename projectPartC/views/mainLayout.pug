@@ -1,0 +1,35 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="/css/Design.css")
+        link(rel="icon", href="/images/sweet_icon.png")
+        script(src="/js/Utils.js") 
+        title #{page_title}
+    
+    body(onload="activeNavBar()")
+        if user_login === true
+            header
+                nav
+                    img(class="navLogo", src="/images/logo.PNG", alt="navImg")
+                    a(href="/actionPage") Home
+                    a(href="/AboutPage") About us
+                    a(href="/updateUserPage") Update details
+                    a(href="/AddARecipe") Upload recipe
+                    a(href="/allRecipes") Browse Recipes
+                    a(onclick="logout_msg()") Sign out
+        else
+            header
+                nav
+                    img(class="navLogo", src="/images/logo.PNG", alt="navImg")
+                    a(href="/main") Home
+                    a(href="/AboutPage") About us
+                    a(href="/signUp") Sign Up
+                    a(href="/login") Log In
+        
+        div(class="pageContent")
+            h1 #{page_h1}
+            block content
+

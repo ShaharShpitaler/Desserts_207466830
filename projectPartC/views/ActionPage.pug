@@ -1,0 +1,12 @@
+extends mainLayout
+block content
+
+    div(class="buttons-container")
+        p #{msg || ''}
+        a(href="/AddARecipe")
+            img(class="button" src="images/UploadARecipe.PNG")
+        a(href="/allRecipes")
+            img(class="button" src="images/BrowseRecipes.PNG")
+
+
+                

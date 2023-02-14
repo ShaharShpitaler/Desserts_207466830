@@ -1,0 +1,33 @@
+//-----------Required Modules
+var express = require('express');
+var app = express();
+var path = require('path');
+const bodyParser = require('body-parser');
+const csv = require("csvtojson");
+const cookieParser = require("cookie-parser");
+var fileUpload = require("express-fileupload");
+const sql = require('./db/db');
+const CRUD = require("./db/CRUD");
+const CRUDdb = require("./db/CRUD_db");
+const utilsJS = require("./static/js/Utils");
+const mysql = require('mysql2');
+const dbConfig = require('./db_config.js');
+
+
+//-----------initialize db
+//creates
+app.get('/createDBtables', [CRUDdb.createUsersTable, CRUDdb.createRecipesTable, CRUDdb.createRatingsTable]);
+
+//inserts
+app.get('/InsertUsersData', CRUDdb.InsertUsersData);
+app.get('/InsertRecipesData', CRUDdb.InsertRecipesData);
+app.get('/InsertRatingsData', CRUDdb.InsertRatingsData);
+
+//show
+app.get('/showUsers', CRUDdb.showUsers);
+app.get('/showRecipes', CRUDdb.showRecipes);
+app.get('/showRatings', CRUDdb.showRatings);
+
+//Drop
+app.get('/dropDBtables', [CRUDdb.dropRatingsTable, CRUDdb.dropRecipesTable, CRUDdb.dropUsersTable]);
+
